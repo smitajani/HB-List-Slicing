@@ -10,7 +10,8 @@ def head(input_list):
       'Jan'
     """
 
-    return None
+    first_item = input_list[0]
+    return first_item
 
 
 def tail(input_list):
@@ -22,8 +23,8 @@ def tail(input_list):
     ['Feb', 'Mar']
 
     """
-
-    return []
+    new_list = input_list[1:]
+    return new_list
 
 
 def last(input_list):
@@ -35,8 +36,8 @@ def last(input_list):
     'Mar'
 
     """
-
-    return []
+    last_item = input_list[-1]
+    return last_item
 
 
 def top(input_list):
@@ -131,7 +132,7 @@ def replace_head(input_list):
     True
 
     """
-
+    input_list[0] = 42
     pass
 
 
@@ -146,6 +147,7 @@ def replace_third_and_last(input_list):
     True
 
     """
+    input_list[2], input_list[-1] = 37, 37
 
     pass
 
@@ -165,7 +167,7 @@ def replace_middle(input_list):
     True
 
     """
-
+    input_list[2:-2] = [42, 37]
     pass
 
 
@@ -180,7 +182,8 @@ def delete_third_and_seventh(input_list):
     True
 
     """
-
+    input_list.pop(2)
+    input_list.pop(5)
     pass
 
 
@@ -197,9 +200,9 @@ def delete_middle(input_list):
     True
 
     """
-
+    input_list[2:-2] = []
     pass
-
+    
 
 # This is the part were we actually run the doctests.
 
@@ -209,3 +212,4 @@ if __name__ == '__main__':
     result = doctest.testmod()
     if result.failed == 0:
         print('ALL TESTS PASSED')
+    
